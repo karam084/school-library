@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'Person'
 # This is the Person class, parent of student and teacher class
 class Teacher < Person

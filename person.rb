@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This is the Person class, parent of student and teacher class
 class Person
   def initialize(age, id = 0, name = 'Unknown', parent_permission: true)
