@@ -1,6 +1,6 @@
 # This is the Person class, parent of student and teacher class
 class Person
-  def initialize(age, id = 0, name = 'Unknown', parent_permission: true)
+  def initialize(age:, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
     @age = age
     @name = name
