@@ -1,5 +1,4 @@
-require_relative 'basedecorator'
-require_relative 'person'
+require './basedecorator'
 
 class CapitalizeDecorator < BaseDecorator
   def correct_name

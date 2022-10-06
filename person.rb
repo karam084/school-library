@@ -1,18 +1,21 @@
 # This is the Person class, parent of student and teacher classrequire_relative 'nameable'
 
-require_relative 'nameable'
+require './nameable'
+require './basedecorator'
+require './capitalizedecorator'
+require './trimmerdecorator'
 
 class Person < Nameable
-  attr_accessor :name, :age
-  attr_reader :id
-
-  def initialize(age:, name: 'Unknown', parent_permission: true)
+  def initialize(age:, id: 0, name: 'Unknown', parent_permission: true)
     super
-    @id = Random.rand(1..100)
-    @name = name
+    @id = id
     @age = age
+    @name = name
     @parent_permission = parent_permission
   end
+
+  attr_reader :id
+  attr_accessor :age, :name
 
   def can_use_services?
     of_age? || @parent_permission

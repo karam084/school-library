@@ -1,3 +1,5 @@
+require './basedecorator'
+
 class TrimmerDecorator < BaseDecorator
     def correct_name
       if super.length > 10
@@ -7,3 +9,4 @@ class TrimmerDecorator < BaseDecorator
       end
     end
   end
+  
