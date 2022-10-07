@@ -1,15 +1,12 @@
 require './app'
-# rubocop:disable ClassLength
 def check
   input = gets.chomp
   while input.to_i > 7 || input.to_i < 1
     puts 'Please enter a valid option:'
-    t = gets.chomp
   end
   input
 end
 
-# rubocop:disable ClassLength
 def menu
   app = App.new
   loop do
@@ -42,7 +39,6 @@ def menu
   end
 end
 
-# rubocop:disable ClassLength
 def main
   puts "Welcome to the School Library app!\n"
   menu

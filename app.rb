@@ -1,5 +1,3 @@
-# rubocop:disable ClassLength
-
 require './basedecorator'
 require './book'
 require './capitalizedecorator'
@@ -34,7 +32,6 @@ class App
     end
   end
 
-  # rubocop:disable ClassLength
   def create_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
     type = gets.chomp.to_i
@@ -75,7 +72,6 @@ class App
     puts 'Book created successfully'
   end
 
-  # rubocop:disable ClassLength
   def create_rental
     puts 'Select a book from the following list by number'
     list_books
@@ -98,7 +94,6 @@ class App
     puts 'Rental created successfully'
   end
 
-  # rubocop:disable ClassLength
   def list_rentals
     list_people
     print 'ID: '
