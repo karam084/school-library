@@ -105,7 +105,7 @@ class App
         person_index = index
         found = true
       end
-    end
+    endmain.rb
     until found
       print 'Please enter a valid option:'
       id = gets.chomp.downcase
