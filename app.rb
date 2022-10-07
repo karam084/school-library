@@ -23,12 +23,7 @@ class App
 
   def list_people
     @people.each_with_index do |person, index|
-      type = if person.classroom
-               'Student'
-             else
-               'Teacher'
-             end
-      puts "#{index}) [#{type}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
+      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
     end
   end
 
@@ -105,20 +100,19 @@ class App
         person_index = index
         found = true
       end
-      endmain.rb
-      until found
-        print 'Please enter a valid option:'
-        id = gets.chomp.downcase
-        @people.each_with_index do |person, index|
-          if person.id == id
-            person_index = index
-            found = true
-          end
+    end
+    until found
+      print 'Please enter a valid option:'
+      id = gets.chomp.downcase
+      @people.each_with_index do |person, index|
+        if person.id == id
+          person_index = index
+          found = true
         end
       end
-      @rentals[person_index].each do |rental|
-        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
-      end
+    end
+    @rentals[person_index].each do |rental|
+      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
     end
   end
 end

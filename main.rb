@@ -1,9 +1,7 @@
 require './app'
 def check
   input = gets.chomp
-  while input.to_i > 7 || input.to_i < 1
-    puts 'Please enter a valid option:'
-  end
+  puts 'Please enter a valid option:' while input.to_i > 7 || input.to_i < 1
   input
 end
 
