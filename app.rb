@@ -105,19 +105,20 @@ class App
         person_index = index
         found = true
       end
-    endmain.rb
-    until found
-      print 'Please enter a valid option:'
-      id = gets.chomp.downcase
-      @people.each_with_index do |person, index|
-        if person.id == id
-          person_index = index
-          found = true
+      endmain.rb
+      until found
+        print 'Please enter a valid option:'
+        id = gets.chomp.downcase
+        @people.each_with_index do |person, index|
+          if person.id == id
+            person_index = index
+            found = true
+          end
         end
       end
-    end
-    @rentals[person_index].each do |rental|
-      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      @rentals[person_index].each do |rental|
+        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      end
     end
   end
 end

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative 'app'
+require './app'
 
 def check
   input = gets.chomp
