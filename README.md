@@ -13,6 +13,10 @@ This repository includes files with plain ruby
 - Twitter: [@twitterhandle](https://twitter.com/ElarabFouad)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/karam-fouad-179830214/)
 
+👤 **Aneal Laryea**
+- GitHub: [@githubhandle](https://github.com/aneallaryea100)
+- Twitter: [@twitterhandle](https://twitter.com/AnealLaryea)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
