@@ -1,7 +1,11 @@
 require './app'
+
 def check
   input = gets.chomp
-  puts 'Please enter a valid option:' while input.to_i > 7 || input.to_i < 1
+  while input.to_i > 7 || input.to_i < 1
+    puts 'Please enter a valid option:'
+    input = gets.chomp
+  end
   input
 end
 
@@ -42,4 +46,5 @@ def main
   menu
   puts 'Thank you for using this app!'
 end
+
 main
