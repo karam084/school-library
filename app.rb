@@ -8,7 +8,7 @@ require './rental'
 require './student'
 require './teacher'
 require './trimmerdecorator'
-require_relative './preserveData'
+require_relative './preserve_data'
 
 class App
   def initialize
