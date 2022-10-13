@@ -8,6 +8,7 @@ require './rental'
 require './student'
 require './teacher'
 require './trimmerdecorator'
+require_relative './preserveData'
 
 class App
   def initialize
@@ -19,12 +20,14 @@ class App
 
   def list_books
     @books.each_with_index { |book, index| puts "#{index}) #{book.title} by #{book.author}" }
+    PreserveData.read_books(@books)
   end
 
   def list_people
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
     end
+    PreserveData.read_people(@people)
   end
 
   def create_person
@@ -50,11 +53,12 @@ class App
     else
       print 'Specialization: '
       specialization = gets.chomp
-      new_person = Teacher.new(age: age, name: name, specialization: specialization)
+      new_person = Teacher.new(age: age, name: name, specialization: specialization, parent_permission: permission)
     end
     @people.push(new_person)
     @rentals.push([])
     puts 'Person created successfully'
+    PreserveData.write_people(@people)
   end
 
   def create_book
@@ -65,6 +69,7 @@ class App
     new_book = Book.new(title, author)
     @books.push(new_book)
     puts 'Book created successfully'
+    PreserveData.write_books(@books)
   end
 
   def create_rental
@@ -87,6 +92,7 @@ class App
     new_rental = Rental.new(date, @books[book_index], @people[person_index])
     @rentals[person_index].push(new_rental)
     puts 'Rental created successfully'
+    PreserveData.write_rentals(@rentals)
   end
 
   def list_rentals
@@ -114,5 +120,6 @@ class App
     @rentals[person_index].each do |rental|
       puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
     end
+    PreserveData.read_rentals(@rentals)
   end
 end
