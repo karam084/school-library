@@ -49,11 +49,14 @@ class App
         letter = gets.chomp
       end
       permission = %w[y Y].include?(letter)
-      new_person = Student.new(age: age, name: name, parent_permission: permission, classroom: @classroom)
+      print 'Classroom: '
+      classroom = gets.chomp
+
+      new_person = Student.new(classroom, age, name, parent_permission: permission)
     else
       print 'Specialization: '
       specialization = gets.chomp
-      new_person = Teacher.new(age: age, name: name, specialization: specialization, parent_permission: permission)
+      new_person = Teacher.new(specialization, age, name, parent_permission: true)
     end
     @people.push(new_person)
     @rentals.push([])
@@ -92,7 +95,7 @@ class App
     new_rental = Rental.new(date, @books[book_index], @people[person_index])
     @rentals[person_index].push(new_rental)
     puts 'Rental created successfully'
-    PreserveData.write_rentals(@rentals)
+    # PreserveData.write_rentals(new_rental)
   end
 
   def list_rentals

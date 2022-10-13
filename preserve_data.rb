@@ -65,11 +65,11 @@ class PreserveData
     data = JSON.parse(people_files.read)
     data.each do |person|
       if person['class'] == 'Student'
-        student = Student.new(person['age'], person['name'], person['classroom'], person['parent_permission'])
+        student = Student.new(person['classroom'], person['age'], person['name'], person['parent_permission'])
         student.id = person['id']
         people_array << student
       else
-        teacher = Teacher.new(person['age'], person['name'], person['specialization'])
+        teacher = Teacher.new( person['specialization'], person['age'], person['name'], person['parent_permission'])
         teacher.id = person['id']
         people_array << teacher
       end

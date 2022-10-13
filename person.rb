@@ -7,17 +7,16 @@ require './trimmerdecorator'
 require 'securerandom'
 
 class Person < Nameable
-  def initialize(age:, name: 'Unknown', parent_permission: true)
+  attr_accessor :age, :name, :rentals, :id
+  def initialize(age, name, parent_permission)
     super()
-    @id = SecureRandom.hex(3)
+    @id = nil || SecureRandom.random_number(1000)
     @age = age
     @name = name
     @parent_permission = parent_permission
     @rentals = []
   end
 
-  attr_reader :id
-  attr_accessor :age, :name, :rentals
 
   def can_use_services?
     of_age? || @parent_permission
