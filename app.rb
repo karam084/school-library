@@ -95,7 +95,6 @@ class App
     new_rental = Rental.new(date, @books[book_index], @people[person_index])
     @rentals[person_index].push(new_rental)
     puts 'Rental created successfully'
-    # PreserveData.write_rentals(new_rental)
   end
 
   def list_rentals

@@ -42,7 +42,6 @@ class PreserveData
                           id: person.id,
                           age: person.age,
                           name: person.name
-                          # parent_permission: person.parent_permission
                         }
                       else
                         {
@@ -69,7 +68,7 @@ class PreserveData
         student.id = person['id']
         people_array << student
       else
-        teacher = Teacher.new( person['specialization'], person['age'], person['name'], person['parent_permission'])
+        teacher = Teacher.new(person['specialization'], person['age'], person['name'], person['parent_permission'])
         teacher.id = person['id']
         people_array << teacher
       end
@@ -83,14 +82,16 @@ class PreserveData
   def self.write_rentals(rentals)
     rental_array = []
     rentals.each do |rental|
-      rental_array << {
-        date: rental.date,
-        title: rental.book.title,
-        author: rental.book.author,
-        name: rental.person.name,
-        age: rental.person.age,
-        parent_permission: rental.person.parent_permission
-      }
+      rental_array << if rental.instance_of?(Rental)
+                        {
+                          date: rental.date,
+                          title: rental.book.title,
+                          author: rental.book.author,
+                          name: rental.person.name,
+                          age: rental.person.age,
+                          parent_permission: rental.person.parent_permission
+                        }
+                      end
     end
     File.write('data/rentals.json', JSON.pretty_generate(rental_array))
   end
