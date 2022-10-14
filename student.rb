@@ -1,4 +1,4 @@
-require './person'
+require_relative 'person'
 # This is the Person class, parent of student and teacher class
 class Student < Person
   attr_reader :classroom
@@ -14,7 +14,7 @@ class Student < Person
   end
 
   # def write_classroom(classroom)
-  #   @classroom = classroom
-  #   classroom.add_student(self)
+  # @classroom = classroom
+  # classroom.add_student(self)
   # end
 end
