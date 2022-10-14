@@ -11,5 +11,9 @@ describe Book do
     it "Should return  'author' as Book author" do
       expect(book.author).to eq 'author'
     end
+
+    it "returns the correct title" do
+      expect(book.title).to eql 'Book_name'
+  end
   end
 end
