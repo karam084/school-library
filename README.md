@@ -3,8 +3,7 @@ In this project, you will start building your school library app. In this initia
 
 ## Getting Started
 
-This repository includes files with plain ruby
-
+This repository is built with Ruby on Rails
 
 ## Authors
 
